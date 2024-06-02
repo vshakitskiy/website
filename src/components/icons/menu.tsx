@@ -7,15 +7,15 @@ interface MenuIconProps extends HTMLAttributes<HTMLDivElement> {
 
 export const MenuIcon = ({ isOpen, ...props }: MenuIconProps) => {
   return (
-    <div {...props} className="flex flex-col rounded-md gap-y-1.5">
+    <div {...props} className="flex flex-col gap-y-1.5 rounded-md">
       <div
         className={cn("menu-line", {
-          "rotate-45 translate-y-[7px]": isOpen,
+          "translate-y-[7px] rotate-45": isOpen,
         })}
       />
       <div
         className={cn("menu-line", {
-          "-rotate-45 -translate-y-[1px]": isOpen,
+          "-translate-y-[1px] -rotate-45": isOpen,
         })}
       />
       <div

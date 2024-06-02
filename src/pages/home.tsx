@@ -11,8 +11,8 @@ const HomePage = () => {
       {!data ? (
         <></>
       ) : (
-        <div className="flex flex-col-reverse mt-4">
-          <Skeleton className="w-20 h-20" />
+        <div className="mt-4 flex flex-col-reverse">
+          <Skeleton className="h-20 w-20" />
         </div>
       )}
     </MotionWrapper>

@@ -7,7 +7,7 @@ const Skeleton = ({ ...props }: SkeletonProps) => {
   return (
     <div
       {...props}
-      className={cn("rounded-md bg-secondary animate-pulse", props.className)}
+      className={cn("animate-pulse rounded-md bg-secondary", props.className)}
     />
   )
 }
