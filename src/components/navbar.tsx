@@ -17,7 +17,7 @@ const Navbar = () => {
   const { pathname } = useLocation()
   // TODO: fix pathname type
   const isInBoundry = ["/", "/projects", "/technologies", "/etc"].includes(
-    pathname
+    pathname,
   )
 
   const [playSound] = useSound(switchSound)
@@ -41,21 +41,21 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="md:hidden border-b border-b-primary-foreground flex justify-between items-center px-8 py-4">
+      <nav className="flex items-center justify-between border-b border-b-primary-foreground px-8 py-4 md:hidden">
         <h2 className="font-bold">Vladislav Shakitskiy</h2>
         <MenuIcon onClick={toggleMobileMenu} isOpen={isOpen} />
       </nav>
       <nav
         className={cn(
-          "fixed md:h-screen top-0 left-0 p-8 border-r border-r-primary-foreground flex flex-col z-50",
+          "fixed left-0 top-0 z-50 flex flex-col border-r border-r-primary-foreground p-8 md:h-screen",
           {
-            "duration-700 w-full h-full backdrop-blur-sm": isMobile,
+            "h-full w-full backdrop-blur-sm duration-700": isMobile,
             "translate-y-full": !isOpen && isMobile,
             "translate-y-14 backdrop-blur-sm": isOpen && isMobile,
-          }
+          },
         )}
       >
-        <h2 className="hidden mb-1 font-bold text-lg md:block">
+        <h2 className="mb-1 hidden text-lg font-bold md:block">
           Vladislav Shakitskiy
         </h2>
         <h3>
@@ -72,13 +72,13 @@ const Navbar = () => {
           {!isMobile ? (
             <div
               className={cn(
-                "transition-transform timing duration-500 absolute w-0.5 h-8 bg-primary top-3 -right-[33px]",
+                "timing absolute -right-[33px] top-3 h-8 w-0.5 bg-primary transition-transform duration-500",
                 {
                   "translate-y-10": pathname === "/projects",
                   "translate-y-20": pathname === "/technologies",
                   "translate-y-[120px]": pathname === "/etc",
                   "opacity-0": !isInBoundry,
-                }
+                },
               )}
             ></div>
           ) : null}
@@ -87,10 +87,10 @@ const Navbar = () => {
           <NavbarItem text="technologies" link="/technologies" />
           <NavbarItem text="more" link="/etc" />
         </ul>
-        <ul className="flex items-center justify-between md:justify-around mt-auto mb-16 md:mb-4">
+        <ul className="mb-16 mt-auto flex items-center justify-between md:mb-4 md:justify-around">
           <li>
             <a target="_blank" href="https://github.com/vshakitskiy">
-              <FaGithub className="w-6 h-6" />
+              <FaGithub className="h-6 w-6" />
             </a>
           </li>
           <li>
