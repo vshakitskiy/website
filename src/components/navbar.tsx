@@ -9,16 +9,14 @@ import switchSound from "../assets/sounds/switch.mp3"
 import { FaGithub } from "react-icons/fa"
 import ModeToggle from "./modeToggle"
 
-type Paths = "/" | "/projects" | "/technologies" | "/etc"
+const PATHS = ["/", "/projects", "/technologies", "/etc"] as const
+type Paths = (typeof PATHS)[number]
 
 const Navbar = () => {
   const { isMobile } = useWindowSize(768)
   const [isOpen, setIsOpen] = useState<boolean>(false)
-  const { pathname } = useLocation()
-  // TODO: fix pathname type
-  const isInBoundry = ["/", "/projects", "/technologies", "/etc"].includes(
-    pathname,
-  )
+  const { pathname } = useLocation() as { pathname: Paths }
+  const isInBoundry = PATHS.includes(pathname)
 
   const [playSound] = useSound(switchSound)
 
@@ -31,7 +29,7 @@ const Navbar = () => {
 
   const NavbarItem = ({ text, link }: { text: string; link: Paths }) => (
     <li
-      className={cn("menu-link", {
+      className={cn("menu-link font-medium", {
         "text-[#727272] dark:text-[#a9a9a9]": link !== pathname,
       })}
     >
@@ -49,9 +47,9 @@ const Navbar = () => {
         className={cn(
           "fixed left-0 top-0 z-50 flex flex-col border-r border-r-primary-foreground p-8 md:h-screen",
           {
-            "h-full w-full backdrop-blur-sm duration-700": isMobile,
+            "h-full w-full backdrop-blur-md duration-700": isMobile,
             "translate-y-full": !isOpen && isMobile,
-            "translate-y-14 backdrop-blur-sm": isOpen && isMobile,
+            "translate-y-14 backdrop-blur-md": isOpen && isMobile,
           },
         )}
       >
@@ -101,6 +99,5 @@ const Navbar = () => {
     </>
   )
 }
-// https://www.google.com/maps/search/Elektrougli, Moscow Region
 
 export default Navbar
