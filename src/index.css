@@ -91,10 +91,22 @@ body,
   }
 
   .menu-line {
-    @apply bg-primary h-[2px] w-[20px] transition-[transform,opacity] duration-700;
+    @apply h-[2px] w-[20px] bg-primary transition-[transform,opacity] duration-700;
   }
 
   .menu-link {
     @apply mt-4;
+  }
+
+  .heading-primary {
+    @apply my-6 text-3xl font-bold;
+  }
+
+  .heading-secondary {
+    @apply my-4 text-xl font-bold;
+  }
+
+  .text {
+    @apply my-2 max-w-2xl leading-snug text-[#4b4b4b] dark:text-[#cbcbcb];
   }
 }
