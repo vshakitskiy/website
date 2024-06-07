@@ -6,8 +6,8 @@ import LocationIcon from "./icons/location"
 import useWindowSize from "hooks/useWindowSize"
 import useSound from "use-sound"
 import switchSound from "../assets/sounds/switch.mp3"
-import { FaGithub } from "react-icons/fa"
 import ModeToggle from "./modeToggle"
+import { GithubIcon } from "./icons/tech"
 
 const PATHS = ["/", "/projects", "/technologies", "/etc"] as const
 type Paths = (typeof PATHS)[number]
@@ -39,7 +39,15 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="flex items-center justify-between border-b border-b-primary-foreground px-8 py-4 md:hidden">
+      <nav
+        className={cn(
+          "fixed top-0 z-50 flex w-full items-center justify-between border-b border-b-border px-8 py-4 md:hidden",
+          {
+            "backdrop-blur-lg": isMobile && !isOpen,
+            "bg-background": isMobile && isOpen,
+          },
+        )}
+      >
         <h2 className="font-bold">Vladislav Shakitskiy</h2>
         <MenuIcon onClick={toggleMobileMenu} isOpen={isOpen} />
       </nav>
@@ -47,9 +55,9 @@ const Navbar = () => {
         className={cn(
           "fixed left-0 top-0 z-50 flex flex-col border-r border-r-primary-foreground p-8 md:h-screen",
           {
-            "h-full w-full backdrop-blur-md duration-700": isMobile,
+            "h-full w-full bg-background duration-700": isMobile,
             "translate-y-full": !isOpen && isMobile,
-            "translate-y-14 backdrop-blur-md": isOpen && isMobile,
+            "translate-y-14": isOpen && isMobile,
           },
         )}
       >
@@ -86,12 +94,12 @@ const Navbar = () => {
           <NavbarItem text="more" link="/etc" />
         </ul>
         <ul className="mb-16 mt-auto flex items-center justify-between md:mb-4 md:justify-around">
-          <li>
+          <li className="p-2">
             <a target="_blank" href="https://github.com/vshakitskiy">
-              <FaGithub className="h-6 w-6" />
+              <GithubIcon className="h-6 w-6" />
             </a>
           </li>
-          <li>
+          <li className="p-2">
             <ModeToggle />
           </li>
         </ul>

@@ -1,9 +1,16 @@
-import { RiNextjsFill, RiReactjsFill, RiTailwindCssFill } from "react-icons/ri"
-import { BiLogoTypescript } from "react-icons/bi"
-import { SiPrisma } from "react-icons/si"
-import { DiRedis } from "react-icons/di"
-import { IconType } from "react-icons"
+// TODO: rewrite this mess
+
 import { cn } from "lib/utils"
+import { IconType } from "types/icons"
+import {
+  NextIcon,
+  PrismaIcon,
+  ReactIcon,
+  RedisIcon,
+  TSIcon,
+  TailwindcssIcon,
+  ViteIcon,
+} from "./icons/tech"
 
 const FormIcon = ({
   Icon,
@@ -20,7 +27,7 @@ const FormIcon = ({
       className,
     )}
   >
-    <div className="absolute top-7 flex items-center gap-2 border border-secondary bg-background px-3 py-1 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+    <div className="absolute top-7 flex items-center gap-2 border border-border bg-background px-3 py-1 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
       <Icon className="h-5 w-5 text-foreground" />
       {text}
     </div>
@@ -33,7 +40,7 @@ export const generateStackIcons = (classNames: string) => ({
     <FormIcon
       key={"cards-react"}
       text="React"
-      Icon={RiReactjsFill}
+      Icon={ReactIcon}
       className={classNames}
     />
   ),
@@ -41,7 +48,7 @@ export const generateStackIcons = (classNames: string) => ({
     <FormIcon
       key={"cards-next"}
       text="Next"
-      Icon={RiNextjsFill}
+      Icon={NextIcon}
       className={classNames}
     />
   ),
@@ -49,7 +56,7 @@ export const generateStackIcons = (classNames: string) => ({
     <FormIcon
       key={"cards-ts"}
       text="Typescript"
-      Icon={BiLogoTypescript}
+      Icon={TSIcon}
       className={classNames}
     />
   ),
@@ -57,7 +64,7 @@ export const generateStackIcons = (classNames: string) => ({
     <FormIcon
       key={"cards-tailwind"}
       text="Tailwindcss"
-      Icon={RiTailwindCssFill}
+      Icon={TailwindcssIcon}
       className={classNames}
     />
   ),
@@ -65,7 +72,7 @@ export const generateStackIcons = (classNames: string) => ({
     <FormIcon
       key={"cards-prisma"}
       text="Prisma"
-      Icon={SiPrisma}
+      Icon={PrismaIcon}
       className={classNames}
     />
   ),
@@ -73,7 +80,15 @@ export const generateStackIcons = (classNames: string) => ({
     <FormIcon
       key={"cards-redis"}
       text="Redis"
-      Icon={DiRedis}
+      Icon={RedisIcon}
+      className={classNames}
+    />
+  ),
+  Vite: (
+    <FormIcon
+      key={"cards-vite"}
+      text="Vite"
+      Icon={ViteIcon}
       className={classNames}
     />
   ),

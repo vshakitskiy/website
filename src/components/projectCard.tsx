@@ -14,11 +14,11 @@ const ProjectCard = ({ ...data }: Project) => {
 
       <div className="bg-background transition-colors duration-300 hover:bg-[#f9f9f9] dark:hover:bg-[#050505]">
         <div className="stats-template grid">
-          <div className="flex w-auto flex-col justify-center border-x border-secondary p-3">
+          <div className="flex w-auto flex-col justify-center border-x border-border p-3">
             <h5 className="text-sm font-bold">name</h5>
             <p>{data.name}</p>
           </div>
-          <div className="flex w-auto flex-col justify-center border-r border-secondary p-3">
+          <div className="flex w-auto flex-col justify-center border-r border-border p-3">
             <h5 className="text-sm font-bold">phase</h5>
             <div className="flex items-center gap-2">
               {data.phase}{" "}
@@ -31,31 +31,31 @@ const ProjectCard = ({ ...data }: Project) => {
               />
             </div>
           </div>
-          <div className="xs:flex xs:border-l-0 hidden w-auto flex-col justify-center border-x border-r border-secondary p-3">
+          <div className="xs:flex xs:border-l-0 hidden w-auto flex-col justify-center border-x border-r border-border p-3">
             <h5 className="text-sm font-bold">stack</h5>
             <div className="flex flex-wrap">
               {data.technologies.map((tech) => stackIcons[tech])}
             </div>
           </div>
         </div>
-        <div className="xs:hidden flex w-auto flex-col justify-center border-x border-t border-secondary p-3">
+        <div className="xs:hidden flex w-auto flex-col justify-center border-x border-t border-border p-3">
           <h5 className="text-sm font-bold">stack</h5>
           <div className="flex flex-wrap">
             {data.technologies.map((tech) => stackIcons[tech])}
           </div>
         </div>
-        <div className="flex w-auto flex-col justify-center border-x border-y border-secondary p-3 py-5">
+        <div className="flex w-auto flex-col justify-center border-x border-t border-border p-3 py-5">
           <h5 className="text-sm font-bold">what</h5>
           <p>{data.description}</p>
         </div>
         {data.link ? (
           <Link to={data.link}>
-            <button className="w-full rounded-b-md border border-secondary py-2 hover:bg-[#e2e2e2] dark:hover:bg-[#202020]">
+            <button className="w-full rounded-b-md border border-border py-2 hover:bg-[#e2e2e2] dark:hover:bg-[#202020]">
               View project
             </button>
           </Link>
         ) : (
-          <button className="w-full cursor-not-allowed rounded-b-md border border-secondary py-2 text-[#d4d4d4] dark:text-secondary">
+          <button className="w-full cursor-not-allowed rounded-b-md border border-border py-2 text-[#d4d4d4] dark:text-secondary">
             View project
           </button>
         )}
