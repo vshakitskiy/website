@@ -51,6 +51,10 @@ export default {
           // foreground: "hsl(var(--link-foreground))",
         },
       },
+      screens: {
+        xs: "500px",
+        "3xl": "1792px",
+      },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
       },

@@ -13,6 +13,10 @@ body,
   transition-timing-function: cubic-bezier(0.5, 0.25, 0, 1);
 }
 
+.stats-template {
+  grid-template-columns: auto 1fr auto;
+}
+
 @layer base {
   @font-face {
     font-family: "Montserrat";
