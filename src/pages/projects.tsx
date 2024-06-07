@@ -1,6 +1,7 @@
 import MotionWrapper from "components/motionWrapper"
 import { Project } from "types/projects"
 import Simapi from "assets/simapi.jpg"
+import Website from "assets/website.png"
 import Productify from "assets/productify.jpg"
 import ProjectCard from "components/projectCard"
 
@@ -30,6 +31,15 @@ const PROJECTS: Project[] = [
     image: Productify,
     phase: "Completed",
   },
+  {
+    name: "website",
+    link: null,
+    github: "https://github.com/vshakitskiy/website",
+    description: "My personal website.",
+    technologies: ["React", "Typescript", "Tailwindcss", "Vite"],
+    image: Website,
+    phase: "Building",
+  },
 ]
 
 const ProjectsPage = () => {
@@ -37,9 +47,7 @@ const ProjectsPage = () => {
     <MotionWrapper>
       <h1 className="heading-primary">Projects</h1>
       <h3 className="heading-secondary">Companies</h3>
-      <div className="w-full border-2 border-dotted border-card bg-accent p-12 opacity-50">
-        Empty for now...
-      </div>
+      <div className="w-full border-2 border-dotted border-card bg-[#cecece] p-12 dark:bg-accent dark:opacity-50"></div>
       <h3 className="heading-secondary">Open Source Projects</h3>
       <div className="3xl:grid-cols-3 mb-10 grid grid-cols-1 gap-8 xl:grid-cols-2">
         {PROJECTS.map((project) => (
