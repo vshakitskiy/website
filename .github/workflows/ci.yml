@@ -5,8 +5,8 @@ on:
     branches:
       - main
   pull_request: 
-    branches: 
-      - dev
+    branches:
+      - main
 
 jobs:
   lint-and-typecheck:
