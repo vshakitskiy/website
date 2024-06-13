@@ -15,6 +15,7 @@ const ProjectCard = ({ ...data }: Project) => {
           src={data.image}
           alt={data.name}
           placeholderSrc={loader}
+          loading="lazy"
         />
       </div>
 
