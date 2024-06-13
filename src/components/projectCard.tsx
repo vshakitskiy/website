@@ -2,6 +2,8 @@ import { Project } from "types/projects"
 import { generateStackIcons } from "./stackIcon"
 import { Link } from "react-router-dom"
 import { cn } from "lib/utils"
+import { LazyLoadImage } from "react-lazy-load-image-component"
+import loader from "assets/loader.png"
 
 const stackIcons = generateStackIcons("w-6 h-6 mr-1")
 
@@ -9,7 +11,11 @@ const ProjectCard = ({ ...data }: Project) => {
   return (
     <div className="w-full rounded-3xl">
       <div className="rounded-t-md bg-foreground p-1 transition-[max-height] duration-150">
-        <img src={data.image} alt={data.name} className="rounded-md" />
+        <LazyLoadImage
+          src={data.image}
+          alt={data.name}
+          placeholderSrc={loader}
+        />
       </div>
 
       <div className="bg-background transition-colors duration-300 hover:bg-[#f9f9f9] dark:hover:bg-[#050505]">
@@ -31,14 +37,14 @@ const ProjectCard = ({ ...data }: Project) => {
               />
             </div>
           </div>
-          <div className="xs:flex xs:border-l-0 hidden w-auto flex-col justify-center border-x border-r border-border p-3">
+          <div className="hidden w-auto flex-col justify-center border-x border-r border-border p-3 xs:flex xs:border-l-0">
             <h5 className="text-sm font-bold">stack</h5>
             <div className="flex flex-wrap">
               {data.technologies.map((tech) => stackIcons[tech])}
             </div>
           </div>
         </div>
-        <div className="xs:hidden flex w-auto flex-col justify-center border-x border-t border-border p-3">
+        <div className="flex w-auto flex-col justify-center border-x border-t border-border p-3 xs:hidden">
           <h5 className="text-sm font-bold">stack</h5>
           <div className="flex flex-wrap">
             {data.technologies.map((tech) => stackIcons[tech])}
