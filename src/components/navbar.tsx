@@ -70,7 +70,7 @@ const Navbar = () => {
             target="_blank"
             className="flex items-center gap-3"
           >
-            <LocationIcon className="h-5 w-5" color="#6f00e6" />
+            <LocationIcon className="h-5 w-5" color="#b300a4" />
             <p className="transition-none">Elektrougli, MR</p>
           </a>
         </h3>
