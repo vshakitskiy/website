@@ -23,7 +23,7 @@ body,
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url("./assets/fonts/Montserrat-Regular.ttf");
+    src: url("./assets/fonts/Montserrat-Regular.woff2") format("woff2");
   }
 
   @font-face {
@@ -31,7 +31,7 @@ body,
     font-style: normal;
     font-weight: 500;
     font-display: swap;
-    src: url("./assets/fonts/Montserrat-Medium.ttf");
+    src: url("./assets/fonts/Montserrat-Medium.woff2") format("woff2");
   }
 
   @font-face {
@@ -39,7 +39,7 @@ body,
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url("./assets/fonts/Montserrat-Bold.ttf");
+    src: url("./assets/fonts/Montserrat-Bold.woff2") format("woff2");
   }
 
   :root {

@@ -2,8 +2,6 @@ import { Project } from "types/projects"
 import { generateStackIcons } from "./stackIcon"
 import { Link } from "react-router-dom"
 import { cn } from "lib/utils"
-import { LazyLoadImage } from "react-lazy-load-image-component"
-import loader from "assets/loader.png"
 
 const stackIcons = generateStackIcons("w-6 h-6 mr-1")
 
@@ -11,12 +9,7 @@ const ProjectCard = ({ ...data }: Project) => {
   return (
     <div className="w-full rounded-3xl">
       <div className="rounded-t-md bg-foreground p-1 transition-[max-height] duration-150">
-        <LazyLoadImage
-          src={data.image}
-          alt={data.name}
-          placeholderSrc={loader}
-          loading="lazy"
-        />
+        <img src={data.image} alt={data.name} loading="lazy" />
       </div>
 
       <div className="bg-background transition-colors duration-300 hover:bg-[#f9f9f9] dark:hover:bg-[#050505]">
