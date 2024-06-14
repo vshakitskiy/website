@@ -5,7 +5,7 @@ const RootLayout = () => {
   return (
     <div className="h-full font-montserrat md:flex">
       <Navbar />
-      <main className="flex-1 p-10 md:ml-[252px]">
+      <main className="2xs:p-10 flex-1 p-3 md:ml-[252px]">
         <Outlet />
       </main>
     </div>

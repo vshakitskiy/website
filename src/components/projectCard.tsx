@@ -13,12 +13,12 @@ const ProjectCard = ({ ...data }: Project) => {
       </div>
 
       <div className="bg-background transition-colors duration-300 hover:bg-[#f9f9f9] dark:hover:bg-[#050505]">
-        <div className="stats-template grid">
+        <div className="stats-template 3xs:grid">
           <div className="flex w-auto flex-col justify-center border-x border-border p-3">
             <h5 className="text-sm font-bold">name</h5>
             <p>{data.name}</p>
           </div>
-          <div className="flex w-auto flex-col justify-center border-r border-border p-3">
+          <div className="3xs:flex hidden w-auto flex-col justify-center border-r border-border p-3">
             <h5 className="text-sm font-bold">phase</h5>
             <div className="flex items-center gap-2">
               {data.phase}{" "}
@@ -36,6 +36,19 @@ const ProjectCard = ({ ...data }: Project) => {
             <div className="flex flex-wrap">
               {data.technologies.map((tech) => stackIcons[tech])}
             </div>
+          </div>
+        </div>
+        <div className="3xs:hidden flex w-auto flex-col justify-center border-x border-t border-border p-3">
+          <h5 className="text-sm font-bold">phase</h5>
+          <div className="flex items-center gap-2">
+            {data.phase}{" "}
+            <div
+              className={cn("h-2.5 w-2.5 rounded-full", {
+                "bg-green-500": data.phase === "Completed",
+                "bg-cyan-500": data.phase === "Building",
+                "bg-purple-500": data.phase === "Passive",
+              })}
+            />
           </div>
         </div>
         <div className="flex w-auto flex-col justify-center border-x border-t border-border p-3 xs:hidden">

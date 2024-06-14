@@ -41,7 +41,7 @@ const Navbar = () => {
     <>
       <nav
         className={cn(
-          "fixed top-0 z-50 flex w-full items-center justify-between border-b border-b-border px-8 py-4 md:hidden",
+          "2xs:px-10 fixed top-0 z-50 flex w-full items-center justify-between gap-2 border-b border-b-border px-3 py-4 md:hidden",
           {
             "backdrop-blur-lg": isMobile && !isOpen,
             "bg-background": isMobile && isOpen,

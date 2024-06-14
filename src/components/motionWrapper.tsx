@@ -25,7 +25,7 @@ const MotionWrapper = ({ children, ...props }: MotionWrapperProps) => {
       animate="in"
       exit="out"
       transition={{ duration: 0.5 }}
-      className="h-full"
+      className="2xs:mt-0 mt-14 h-full"
     >
       <div {...props}>{children}</div>
     </m.section>

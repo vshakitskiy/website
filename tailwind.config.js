@@ -52,6 +52,8 @@ export default {
         },
       },
       screens: {
+        "3xs": "300px",
+        "2xs": "400px",
         xs: "500px",
         "3xl": "1792px",
       },
