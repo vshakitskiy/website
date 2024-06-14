@@ -21,6 +21,17 @@ const EtcPage = () => {
         </a>
         .
       </p>
+      <p className="text">
+        Thanks to{" "}
+        <a
+          href="https://github.com/Phineas"
+          className="text-link"
+          target="_blank"
+        >
+          @Phineas
+        </a>{" "}
+        for open sourcing his website! Took some concepts from his projects.
+      </p>
       <h2 className="heading-secondary">Contact</h2>
       <p className="text">
         If you have any questions or suggestions, feel free to contact me. I'm
@@ -54,9 +65,13 @@ const EtcPage = () => {
           </span>
         </span>
       </p>
-      {/* <p className="text">
-        Or you can also fill a form down bellow to send me a message.
-      </p> */}
+      <p className="text">
+        Or you can also fill a form down bellow to send me a message:
+      </p>
+      {/* TODO: implement form */}
+      <p className="text-orange-800 dark:text-orange-200">
+        This feature is currently in development
+      </p>
       {/* <form
         className=""
         onSubmit={(e) => {
