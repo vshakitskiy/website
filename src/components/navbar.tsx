@@ -30,7 +30,7 @@ const Navbar = () => {
   const NavbarItem = ({ text, link }: { text: string; link: Paths }) => (
     <li
       className={cn("menu-link font-medium", {
-        "text-[#727272] dark:text-[#a9a9a9]": link !== pathname,
+        "text-foreground": link !== pathname,
       })}
     >
       <Link to={link}>{text}</Link>
@@ -41,27 +41,28 @@ const Navbar = () => {
     <>
       <nav
         className={cn(
-          "2xs:px-10 fixed top-0 z-50 flex w-full items-center justify-between gap-2 border-b border-b-border px-3 py-4 md:hidden",
+          "fixed top-0 z-50 flex w-full items-center justify-between gap-2 border-b border-b-border px-3 py-4 2xs:px-10 md:hidden",
           {
             "backdrop-blur-lg": isMobile && !isOpen,
             "bg-background": isMobile && isOpen,
           },
         )}
       >
-        <h2 className="font-bold">Vladislav Shakitskiy</h2>
+        <h2 className="font-bold text-foreground">Vladislav Shakitskiy</h2>
         <MenuIcon onClick={toggleMobileMenu} isOpen={isOpen} />
       </nav>
       <nav
         className={cn(
-          "fixed left-0 top-0 z-50 flex flex-col border-r border-r-primary-foreground p-8 md:h-screen",
+          "fixed left-0 top-0 z-50 flex flex-col border-r border-r-border p-8 md:h-screen",
           {
-            "h-full w-full bg-background duration-700": isMobile,
+            "h-full w-full bg-background transition-transform duration-700":
+              isMobile,
             "translate-y-full": !isOpen && isMobile,
             "translate-y-14": isOpen && isMobile,
           },
         )}
       >
-        <h2 className="mb-1 hidden text-lg font-bold md:block">
+        <h2 className="mb-1 hidden text-lg font-bold text-foreground md:block">
           Vladislav Shakitskiy
         </h2>
         <h3>
@@ -70,8 +71,8 @@ const Navbar = () => {
             target="_blank"
             className="flex items-center gap-3"
           >
-            <LocationIcon className="h-5 w-5" color="#b300a4" />
-            <p className="transition-none">Elektrougli, MR</p>
+            <LocationIcon className="h-5 w-5" color="#CAA6F7" />
+            <p className="text-foreground">Elektrougli, MR</p>
           </a>
         </h3>
         <ul className="relative mt-2">

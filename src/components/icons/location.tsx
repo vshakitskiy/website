@@ -1,8 +1,18 @@
+import { useTheme } from "components/providers/theme"
 import { SVGProps } from "react"
 
 interface LocationIcon extends SVGProps<SVGSVGElement> {}
 
+const COLORS = {
+  dark: "#CAA6F7",
+  light: "#8839EF",
+}
+
 const LocationIcon = ({ ...props }: LocationIcon) => {
+  const { theme } = useTheme()
+
+  console.log(theme)
+
   return (
     <svg
       {...props}
@@ -11,7 +21,7 @@ const LocationIcon = ({ ...props }: LocationIcon) => {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="currentColor"
+      stroke={COLORS[theme]}
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"

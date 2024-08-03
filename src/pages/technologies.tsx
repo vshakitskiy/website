@@ -57,25 +57,25 @@ const TechnologiesPage = () => {
       <h2 className="heading-secondary">Additional</h2>
       <div className="mb-10 flex flex-wrap justify-center gap-4">
         <div className="technology-additional">
-          <VSCodeIcon className="h-16 w-16" />
+          <VSCodeIcon className="h-16 w-16 text-secondary" />
         </div>
         <div className="technology-additional">
-          <NotionIcon className="h-16 w-16" />
+          <NotionIcon className="h-16 w-16 text-secondary" />
         </div>
         <div className="technology-additional">
-          <GitIcon className="h-16 w-16" />
+          <GitIcon className="h-16 w-16 text-secondary" />
         </div>
         <div className="technology-additional">
-          <MiroIcon className="h-16 w-16" />
+          <MiroIcon className="h-16 w-16 text-secondary" />
         </div>
         <div className="technology-additional">
-          <RapidIcon className="h-16 w-16" />
+          <RapidIcon className="h-16 w-16 text-secondary" />
         </div>
         <div className="technology-additional">
-          <PnpmIcon className="h-16 w-16" />
+          <PnpmIcon className="h-16 w-16 text-secondary" />
         </div>
         <div className="technology-additional">
-          <PostmanIcon className="h-16 w-16" />
+          <PostmanIcon className="h-16 w-16 text-secondary" />
         </div>
       </div>
     </MotionWrapper>

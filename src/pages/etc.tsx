@@ -14,7 +14,7 @@ const EtcPage = () => {
         project available at{" "}
         <a
           href="https://github.com/vshakitskiy/website"
-          className="text-link"
+          className="text-primary"
           target="_blank"
         >
           vshakitskiy/website
@@ -25,7 +25,7 @@ const EtcPage = () => {
         Thanks to{" "}
         <a
           href="https://github.com/Phineas"
-          className="text-link"
+          className="text-primary"
           target="_blank"
         >
           @Phineas
@@ -38,7 +38,7 @@ const EtcPage = () => {
         most responsive through Telegram or Discord DMs. You can{" "}
         <a
           href="https://t.me/vshakitskiy"
-          className="text-link"
+          className="text-primary"
           target="_blank"
         >
           click here
@@ -65,19 +65,19 @@ const EtcPage = () => {
           </span>
         </span>
       </p>
+      <h2 className="heading-secondary">Themes coloring</h2>
       <p className="text">
-        Or you can also fill a form down bellow to send me a message:
+        For themes in my website I use{" "}
+        <a
+          href="https://catppuccin.com/palette"
+          className="text-primary"
+          target="_blank"
+        >
+          Catppuccin
+        </a>{" "}
+        color scheme (Latte for Light / Mocha for Dark). I'm so in love with
+        this colors that I made all my OS using that colors.
       </p>
-      {/* TODO: implement form */}
-      <p className="text-orange-800 dark:text-orange-200">
-        This feature is currently in development
-      </p>
-      {/* <form
-        className=""
-        onSubmit={(e) => {
-          e.preventDefault()
-        }}
-      ></form> */}
     </MotionWrapper>
   )
 }

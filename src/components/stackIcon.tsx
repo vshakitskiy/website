@@ -27,7 +27,7 @@ const FormIcon = ({
       className,
     )}
   >
-    <div className="absolute top-7 flex items-center gap-2 border border-border bg-background px-3 py-1 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+    <div className="absolute top-7 flex items-center gap-2 border border-border bg-background px-3 py-1 text-foreground opacity-0 transition-opacity duration-300 group-hover:opacity-100">
       <Icon className="h-5 w-5 text-foreground" />
       {text}
     </div>

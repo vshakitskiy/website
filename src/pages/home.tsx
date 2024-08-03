@@ -1,10 +1,14 @@
 import MotionWrapper from "components/motionWrapper"
+import { getAge } from "lib/utils"
 
 const HomePage = () => {
   return (
     <MotionWrapper>
       <h1 className="heading-primary">Home</h1>
-      <p className="text">Vlad. 17 y/o, student & developer.</p>
+      <h3 className="heading-secondary">About Me</h3>
+      <p className="text">
+        Vlad. {getAge(new Date(2006, 8, 8))} y/o, student & developer.
+      </p>
       <p className="text">
         I love exploring new technologies by building projects with stack I
         never used before. Currently, I'm working on creating pet projects and
@@ -16,8 +20,8 @@ const HomePage = () => {
       </p>
       <h3 className="heading-secondary">About Open Source</h3>
       <p className="text">
-        I love to work with people who are passionate about what they do. So
-        that's why I'm so happy that Open Source exists. Being able to help
+        I really do love open source. I love the idea of building software that
+        I know people will be able to make use of. And also, being able to help
         developers with contributions is something that I enjoy doing.
       </p>
       <p className="text">

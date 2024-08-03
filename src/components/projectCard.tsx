@@ -8,19 +8,19 @@ const stackIcons = generateStackIcons("w-6 h-6 mr-1")
 const ProjectCard = ({ ...data }: Project) => {
   return (
     <div className="w-full rounded-3xl">
-      <div className="rounded-t-md bg-foreground p-1 transition-[max-height] duration-150">
+      <div className="flex justify-center rounded-t-md bg-foreground p-1 transition-[max-height] duration-150">
         <img src={data.image} alt={data.name} loading="lazy" />
       </div>
 
-      <div className="bg-background transition-colors duration-300 hover:bg-[#f9f9f9] dark:hover:bg-[#050505]">
+      <div className="bg-background hover:bg-card">
         <div className="stats-template 3xs:grid">
           <div className="flex w-auto flex-col justify-center border-x border-border p-3">
             <h5 className="text-sm font-bold">name</h5>
-            <p>{data.name}</p>
+            <p className="text-card-foreground">{data.name}</p>
           </div>
-          <div className="3xs:flex hidden w-auto flex-col justify-center border-r border-border p-3">
+          <div className="hidden w-auto flex-col justify-center border-r border-border p-3 3xs:flex">
             <h5 className="text-sm font-bold">phase</h5>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 text-card-foreground">
               {data.phase}{" "}
               <div
                 className={cn("h-2.5 w-2.5 rounded-full", {
@@ -38,9 +38,9 @@ const ProjectCard = ({ ...data }: Project) => {
             </div>
           </div>
         </div>
-        <div className="3xs:hidden flex w-auto flex-col justify-center border-x border-t border-border p-3">
+        <div className="flex w-auto flex-col justify-center border-x border-t border-border p-3 3xs:hidden">
           <h5 className="text-sm font-bold">phase</h5>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 text-card-foreground">
             {data.phase}{" "}
             <div
               className={cn("h-2.5 w-2.5 rounded-full", {
@@ -59,19 +59,14 @@ const ProjectCard = ({ ...data }: Project) => {
         </div>
         <div className="flex w-auto flex-col justify-center border-x border-t border-border p-3 py-5">
           <h5 className="text-sm font-bold">what</h5>
-          <p>{data.description}</p>
+          <p className="text-card-foreground">{data.description}</p>
         </div>
-        {data.link ? (
-          <Link to={data.link}>
-            <button className="w-full rounded-b-md border border-border py-2 hover:bg-[#e2e2e2] dark:hover:bg-[#202020]">
-              View project
-            </button>
-          </Link>
-        ) : (
-          <button className="w-full cursor-not-allowed rounded-b-md border border-border py-2 text-[#d4d4d4] dark:text-secondary">
-            View project
+
+        <Link target="_blank" to={data.link || data.github}>
+          <button className="w-full rounded-b-md border border-border py-2 text-card-foreground hover:bg-accent">
+            {data.link ? "View project" : "Open in Github"}
           </button>
-        )}
+        </Link>
       </div>
     </div>
   )

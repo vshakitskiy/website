@@ -7,8 +7,17 @@ import ProjectCard from "components/projectCard"
 
 const PROJECTS: Project[] = [
   {
+    name: "website",
+    link: "https://vshakitskiy.dev/",
+    github: "https://github.com/vshakitskiy/website",
+    description: "My personal website.",
+    technologies: ["React", "Typescript", "Tailwindcss", "Vite"],
+    image: Website,
+    phase: "Completed",
+  },
+  {
     name: "simapi",
-    link: "https://simapi.vercel.app/",
+    link: null,
     github: "https://github.com/vshakitskiy/simapi",
     description: "Determine text similarity with ease.",
     technologies: [
@@ -29,15 +38,6 @@ const PROJECTS: Project[] = [
     description: "Full-stack filtering system.",
     technologies: ["React", "Typescript", "Tailwindcss", "Next"],
     image: Productify,
-    phase: "Completed",
-  },
-  {
-    name: "website",
-    link: null,
-    github: "https://github.com/vshakitskiy/website",
-    description: "My personal website.",
-    technologies: ["React", "Typescript", "Tailwindcss", "Vite"],
-    image: Website,
     phase: "Completed",
   },
 ]
